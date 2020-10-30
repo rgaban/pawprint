@@ -1,0 +1,8 @@
+.EditComment {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.EditComment h3 {
+    text-transform: capitalize;
+}

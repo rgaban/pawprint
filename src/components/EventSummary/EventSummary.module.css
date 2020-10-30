@@ -1,0 +1,23 @@
+.EventSummary {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+textarea {
+    display: block;
+    margin: 30px auto 5px auto;
+    width: 85%;
+    height: 100px;
+    text-align: center;
+    font-size: 18px;
+    font-family: sans-serif;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.EventSummary h3 {
+    text-transform: capitalize;
+}

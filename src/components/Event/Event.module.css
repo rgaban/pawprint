@@ -1,0 +1,41 @@
+.Event {
+    display: flex;
+
+}
+
+.ActionImage {
+    align-self: flex-start;
+    object-fit: contain;
+    margin: 0 30px 0 0;
+    padding: 0 20px;
+}
+
+.ActionImage img {
+    width: 65px;
+}
+
+.EventDetails {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.EventDetails p {
+    display: inline-block;
+    margin: 0;
+    padding: 28px 15px 28px 0;
+}
+
+.EventTitle {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ActionIcons {
+    display: flex;
+    flex-direction: column;
+}
+
+.ActionIcons * {
+    display: block;
+}
