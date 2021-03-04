@@ -1,6 +1,8 @@
 .Event {
     display: flex;
-
+    /* justify-content: center; */
+    margin: 0 auto;
+    max-width: 1550px;
 }
 
 .ActionImage {
@@ -38,4 +40,10 @@
 
 .ActionIcons * {
     display: block;
+}
+
+@media (max-width: 1590px) {
+    .Event {
+        max-width: 800px;
+    }
 }

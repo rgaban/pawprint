@@ -33,7 +33,10 @@ const Signup = () => {
     return (
         <Container
             className="d-flex align-items-center justify-content-center"
-            style={{ minHeight: "40vh" }}
+            style={{
+                minHeight: "40vh",
+                paddingTop: "40px"
+            }}
         >
             <div className="w-100" style={{ maxWidth: '400px' }}>
                 <Card>
