@@ -1,18 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Button from '../../components/UI/Button/Button';
 import DatePicker from '../../components/UI/DatePicker/DatePicker';
 import classes from './EditComment.module.css';
 const EditComment = (props) => {
-    useEffect(() => {
-        console.log('[EditComment] Rendering...')
-    }, []);
-
     return (
         <div className={classes.EditComment}>
             <h3>{props.eventName}</h3>
             <DatePicker
                 dateValue={props.dateValue}
+                defaultDateValue={props.defaultDateValue}
                 changed={props.dateChanged} />
             <textarea
                 placeholder={'Add an optional comment...'}

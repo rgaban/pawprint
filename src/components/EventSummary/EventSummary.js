@@ -7,14 +7,14 @@ import classes from './EventSummary.module.css';
 const eventSummary = (props) => {
     let form = (
         <form className={classes.Form} onSubmit={props.submit}>
-            <DatePicker dateDefaultValue={props.dateDefaultValue} changed={props.dateChanged} />
+            <DatePicker dateDefaultValue={props.dateDefaultValue} dateValue={props.dateValue} changed={props.dateChanged} />
             <textarea
                 placeholder={'Add an optional comment...'}
                 type={'textarea'}
                 onChange={props.commentChanged}
             ></textarea>
-            <Button btnType="Danger" clicked={props.addEventCancelled}>CANCEL</Button>
-            <Button type="submit" btnType="Success" clicked={props.addEventContinued}>FINISH</Button>
+            <Button type="button" btnType="Danger" clicked={props.addEventCancelled}>CANCEL</Button>
+            <Button type="submit" btnType="Success">FINISH</Button>
         </form>
     );
 

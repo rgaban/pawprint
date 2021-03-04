@@ -1,20 +1,37 @@
 import { useState, useEffect } from 'react';
+import fetchIntercept from 'fetch-intercept';
 
 export default httpClient => {
     const [error, setError] = useState(null);
 
-    const reqInterceptor = httpClient.interceptors.request.use(req => {
-        setError(null);
-        return req;
-    });
-    const resInterceptor = httpClient.interceptors.response.use(res => res, err => {
-        setError(err);
+    const unregister = fetchIntercept.register({
+        request: function (url, config) {
+            // config.headers.platform="web"
+            setError(null);
+            return [url, config];
+        },
+
+        requestError: function (error) {
+            console.log(error);
+            setError(error);
+            return Promise.reject(error);
+        },
+
+        response: function (response) {
+            return response;
+        },
+
+        responseError: function (error) {
+            console.log(error);
+            setError(error);
+            return error;
+        }
     });
 
     useEffect(() => {
-        httpClient.interceptors.request.eject(reqInterceptor);
-        httpClient.interceptors.response.eject(resInterceptor);
-    }, [httpClient.interceptors.request, httpClient.interceptors.response, reqInterceptor, resInterceptor]);
+        unregister();
+    }, [unregister]);
+
 
     const errorConfirmedHandler = () => {
         setError(null);

@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios-events';
+import useFetch from '../../hooks/use-fetch';
 
 export const addEventSuccess = (id, eventData) => {
     return {
@@ -38,6 +39,7 @@ export const addEvent = (eventData) => {
             .catch(error => {
                 dispatch(addEventFail(error));
             });
+
     };
 };
 
