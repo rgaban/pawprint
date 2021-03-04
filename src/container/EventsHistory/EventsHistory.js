@@ -23,7 +23,7 @@ const actionsObj = {
     poop: [poop, 'Poop']
 }
 
-const EventsHistory = (props) => {
+const EventsHistory = () => {
     const [events, setEvents] = useState();
     const [eventId, setEventId] = useState('');
     const [eventName, setEventName] = useState('');
