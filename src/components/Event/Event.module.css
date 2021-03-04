@@ -41,9 +41,3 @@
 .ActionIcons * {
     display: block;
 }
-
-@media (max-width: 1590px) {
-    .Event {
-        max-width: 800px;
-    }
-}
